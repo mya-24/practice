@@ -1,0 +1,45 @@
+#2021-04-24 B問題
+
+# 長さ N の数列 A, B
+# (1<= N <=1000) / (1 <= Ai <= Bi <= 1000)
+# Ai <= x <=Bi を満たす x の個数
+
+#####################
+#ここに入力例を入れる
+puts "整数 N を入力してください"
+N = gets.chomp.to_i
+
+puts "長さ N の数列 A を入力してください"
+#' 'で区切って複数の要素を認識
+A = gets.split(' ').map(&:to_i)
+
+puts "長さ N の数列 B を入力してください"
+#' 'で区切って複数の要素を認識
+B = gets.split(' ').map(&:to_i)
+#####################
+
+a_max = A.max
+b_min = B.min
+
+#puts "#{a_max},  #{b_min}"
+if a_max > b_min
+    puts 0
+else
+    puts b_min - a_max + 1
+end
+
+##################################################
+#提出用
+N = gets.chomp.to_i
+A = gets.split(' ').map(&:to_i)
+B = gets.split(' ').map(&:to_i)
+ 
+a_max = A.max
+b_min = B.min
+ 
+if a_max > b_min
+    puts 0
+else
+    puts b_min - a_max + 1
+end
+
