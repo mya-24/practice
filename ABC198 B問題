@@ -34,30 +34,3 @@ end
 if i == 10
     puts "No"
 end
-
-
-###########################################################
-#提出用に省略したやつ
-
-N = gets.chomp
-r_N = N.reverse
- 
-for i in 0..10 do
- 
-    #任意の個数0を用意
-    zero = "0" * i
- 
-    #N、反転したNの先頭に任意の0を追加
-    num = zero + N
-    r_num = r_N + zero
- 
-    if num == r_num
-        puts "Yes"
-        break
-    end
-       
-end
- 
-if i == 10
-    puts "No"
-end
