@@ -78,19 +78,14 @@ N = gets.chomp.to_i
 names = []
 heights = []
 
-for i in 0..1000 do
-    puts "#{i + 1}個目の山の情報を入力して下さい"
+(1..N).each do |i|
+    puts "#{i}個目の山の情報を入力して下さい"
     s, t = gets.chomp.split
 
     #'高さ'番目の names 配列の値を'名前'に設定
     names[t.to_i] = s
     # heights 配列末尾に'高さ'の値を格納
     heights << t.to_i
-
-    if i + 1 == N
-        break
-    end
-
 end
 
 # names 配列のうち「heights 配列の上から2番目の値」番目の値を呼出
