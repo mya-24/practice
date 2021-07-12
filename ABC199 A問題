@@ -25,22 +25,3 @@ else
     puts "No"
 end
 
-
-
-##########################################################
-#提出用
-N = gets.split(' ').map(&:to_i)
- 
-A = N[0]
-B = N[1]
-C = N[2]
- 
-A_2 = A * A
-B_2 = B * B
-C_2 = C * C
- 
-if A_2 + B_2 < C_2
-    puts "Yes"
-else
-    puts "No"
-end
