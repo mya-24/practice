@@ -40,33 +40,3 @@ end
 puts n
 #####################
 
-
-
-##################################################
-#提出用
-
-num = gets.split(' ').map(&:to_i)
-
-N = num[0]
-K = num[1]
-
-n = N
-
-for i in 1..20 do
-
-    if n % 200 == 0
-        n = n / 200
-
-    else
-        n = n.to_s + "200"
-        n = n.to_i
-
-    end
-
-    if i == K
-        break
-    end
-
-end
-
-puts n
