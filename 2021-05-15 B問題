@@ -1,0 +1,130 @@
+#2021-05-15 B問題
+
+# 全体で N 個 山がある
+# i 個目の山  名前 Si, 高さ Ti 
+# 2番目に高い山の名前を出力する
+# 入力は N , i個目の情報（N回）
+
+
+puts "山の個数 N を入力してください"
+N = gets.chomp.to_i
+
+names = []
+heights = []
+
+for i in 0..1000 do
+    puts "#{i + 1}個目の山の情報を入力して下さい"
+    mt = gets.split.map(&:to_s)
+
+    names[i] = mt[0]
+    heights[i] = mt[1].to_i
+
+    if i == 0
+        fst_s = names[0]
+        fst_t = heights[0]
+
+    end
+
+    if i == 1
+        if heights[1] > fst_t
+            snd_s = fst_s
+            snd_t = fst_t
+            
+            fst_s = names[1]
+            fst_t = heights[1]
+        else
+            snd_s = names[1]
+            snd_t = heights[1]
+
+        end
+
+    end
+    
+    if  i > 1 
+        
+        if heights[i] > fst_t
+            snd_s = fst_s
+            snd_t = fst_t
+            
+            fst_s = names[i]
+            fst_t = heights[i]
+
+        elsif heights[i] > snd_t
+            snd_s = names[i]
+            snd_t = heights[i]
+
+        end
+
+    end
+
+    #puts "一番高い山は#{fst_s}、#{fst_t}です"
+    #puts "次に高い山は#{snd_s}、#{snd_t}です"
+
+    if i + 1 == N
+        break
+    end
+
+end
+
+puts snd_s
+
+
+
+#####################################################
+#提出用
+N = gets.chomp.to_i
+ 
+names = []
+heights = []
+ 
+for i in 0..1000 do
+    mt = gets.split.map(&:to_s)
+ 
+    names[i] = mt[0]
+    heights[i] = mt[1].to_i
+ 
+    if i == 0
+        fst_s = names[0]
+        fst_t = heights[0]
+ 
+    end
+ 
+    if i == 1
+        if heights[1] > fst_t
+            snd_s = fst_s
+            snd_t = fst_t
+            
+            fst_s = names[1]
+            fst_t = heights[1]
+        else
+            snd_s = names[1]
+            snd_t = heights[1]
+ 
+        end
+ 
+    end
+    
+    if  i > 1 
+        
+        if heights[i] > fst_t
+            snd_s = fst_s
+            snd_t = fst_t
+            
+            fst_s = names[i]
+            fst_t = heights[i]
+ 
+        elsif heights[i] > snd_t
+            snd_s = names[i]
+            snd_t = heights[i]
+ 
+        end
+ 
+    end
+ 
+    if i + 1 == N
+        break
+    end
+ 
+end
+ 
+puts snd_s
