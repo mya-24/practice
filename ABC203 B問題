@@ -1,0 +1,31 @@
+#2021-05-30 B問題
+
+# N 階建てのマンション、各階には K 号室まで存在する
+# i 階の j 号室は　'i0j'号室
+# 全部屋の部屋名となる数字を足した値を出力
+# 1 <= N,K <= 9
+
+#####################
+#ここに入力例を入れる
+puts "階数 N 、部屋数 K を入力してください"
+N, K = gets.split.map(&:to_i)
+#####################
+
+ans = 0
+
+for i in 1..9 do
+    for j in 1..9
+        num = i * 100 + j
+        ans = ans + num
+
+        if j == K
+            break
+        end
+    end
+    
+    if i == N
+        break
+    end 
+end
+
+puts ans
