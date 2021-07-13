@@ -1,0 +1,31 @@
+#2021-06-13 B問題
+
+# 長さ N の数列 A
+# A が (1, 2, ..., N) の並び替えによって得られるか？ Y/N
+# 1 <= N <= 1000
+# 1 <= Ai <= N
+
+A = []
+
+#####################
+#ここに入力例を入れる
+puts "数列の長さ N を入力してください"
+N = gets.chomp.to_i
+puts "数列 A を入力してください"
+A = gets.chomp.split.map(&:to_i)
+#####################
+
+flg = 0
+
+(1..N).each do |i|
+    if i != A.sort[i-1]
+        flg = 1
+        break
+    end
+end
+
+if flg == 0
+    puts "Yes"
+else
+    puts "No"
+end
