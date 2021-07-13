@@ -15,17 +15,11 @@ puts "数列 A を入力してください"
 A = gets.chomp.split.map(&:to_i)
 #####################
 
-flg = 0
-
 (1..N).each do |i|
     if i != A.sort[i-1]
-        flg = 1
-        break
+        puts "No"
+        exit
     end
 end
 
-if flg == 0
-    puts "Yes"
-else
-    puts "No"
-end
+puts "Yes"
